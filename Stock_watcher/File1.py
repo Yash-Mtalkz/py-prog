@@ -53,7 +53,9 @@ for i in range(n):
 
 x = mycol.insert_many(mymultpledoc)'''
 
-query = {"name": "Prashant"}
+'''query = {"name": "Prashant"}
 print(mycol.find_one(query))  # single query
 query = {"Coworker": "7"}
-print(mycol.find(query))
+print(mycol.find(query))  # multiple queries'''
+query = {"name": "Prashant"}
+mycol.find_one_and_update((query), {'$set': {"name": "gautam"}})
