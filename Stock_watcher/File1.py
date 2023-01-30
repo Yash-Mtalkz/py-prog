@@ -5,7 +5,7 @@ client = pymongo.MongoClient(
 project = client["StockWatcher"]
 mycol = project["Stocks"]
 # code for manual addition of fields
-'''mydoc = [{
+mydoc = [{
     'name': 'Prashant',
     'Project': 'Admin Page',
     'Coworker': 5,
@@ -25,9 +25,9 @@ mycol = project["Stocks"]
     'Cohead': 'manas'
 }]
 x = mycol.insert_many(mydoc)
-'''
+
 # code for taking fields as input from the user
-mymultpledoc = []
+'''mymultpledoc = []
 n = int(input())
 
 for i in range(n):
@@ -51,4 +51,9 @@ for i in range(n):
 
     mymultpledoc.append(mydoc)
 
-x = mycol.insert_many(mymultpledoc)
+x = mycol.insert_many(mymultpledoc)'''
+
+query = {"name": "Prashant"}
+print(mycol.find_one(query))  # single query
+query = {"Coworker": "7"}
+print(mycol.find(query))
