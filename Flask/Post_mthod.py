@@ -7,8 +7,8 @@ app = Flask(__name__)
 def users():
     if request.method == 'POST':
         user = {
-            'id': request.json['id'],
-            'name': request.json['name']
+            'id': request.get_json['id'],
+            'name': request.get_json['name']
         }
         # You can add the new user to a database or store it in memory here
         return jsonify({'user': user}), 201
